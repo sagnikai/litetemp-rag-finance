@@ -1,0 +1,60 @@
+sources:
+  - id: fed
+    name: "US Federal Reserve"
+    type: "regulator"
+    jurisdiction: "US"
+    url: "https://www.federalreserve.gov/newsevents/pressreleases.htm"
+    document_type: "policy_statement"
+    first_snapshot: "2019-01-01"
+    last_snapshot: "2026-12-31"
+    snapshot_frequency: "quarterly"
+
+  - id: ecb
+    name: "European Central Bank"
+    type: "regulator"
+    jurisdiction: "EU"
+    url: "https://www.ecb.europa.eu/press/pubbydate/html/index.en.html"
+    document_type: "policy_statement"
+    first_snapshot: "2019-01-01"
+    last_snapshot: "2026-12-31"
+    snapshot_frequency: "monthly"
+
+  - id: boe
+    name: "Bank of England"
+    type: "regulator"
+    jurisdiction: "UK"
+    url: "https://www.bankofengland.co.uk/news"
+    document_type: "policy_statement"
+    first_snapshot: "2019-01-01"
+    last_snapshot: "2026-12-31"
+    snapshot_frequency: "quarterly"
+
+  - id: osfi
+    name: "Office of the Superintendent of Financial Institutions"
+    type: "regulator"
+    jurisdiction: "CA"
+    url: "https://www.osfi-bsif.gc.ca/Eng/fi-if/rg-ro/gdn-ort/Pages/default.aspx"
+    document_type: "regulatory_guidance"
+    first_snapshot: "2020-01-01"
+    last_snapshot: "2026-12-31"
+    snapshot_frequency: "annual"
+
+  - id: fca
+    name: "Financial Conduct Authority"
+    type: "regulator"
+    jurisdiction: "UK"
+    url: "https://www.fca.org.uk/publication"
+    document_type: "regulatory_guidance"
+    first_snapshot: "2019-01-01"
+    last_snapshot: "2026-12-31"
+    snapshot_frequency: "semi-annual"
+
+  - id: sec
+    name: "US Securities and Exchange Commission"
+    type: "regulator"
+    jurisdiction: "US"
+    url: "https://www.sec.gov/rules"
+    document_type: "regulatory_guidance"
+    first_snapshot: "2019-01-01"
+    last_snapshot: "2026-12-31"
+    snapshot_frequency: "quarterly"

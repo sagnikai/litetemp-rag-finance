@@ -1,0 +1,32 @@
+# LiteTemp-RAG-Finance default configuration
+embedder:
+  model: "BAAI/bge-small-en-v1.5"
+  dimension: 384
+  device: "cpu"
+  batch_size: 64
+
+hot_tier:
+  index_type: "HNSW"   # HNSW or Flat
+  index_path: "data/processed/hot_index.faiss"
+  metadata_db: "data/processed/hot_metadata.db"
+  search_hnsw_ef: 128
+  search_k: 10
+
+cold_tier:
+  store_type: "parquet"   # parquet or delta
+  base_path: "data/processed/cold"
+  partition_by: ["source_type", "year"]
+
+ingestion:
+  chunk_size: 512
+  chunk_overlap: 64
+  chunk_by: "sentence"    # sentence, paragraph, section
+  max_sources: 10
+
+evaluation:
+  top_k_values: [1, 5, 10]
+  temporal_precision_weight: 0.5
+
+logging:
+  level: "INFO"
+  file: "logs/pipeline.log"
