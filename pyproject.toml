@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=68.0", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "litetemp-rag-finance"
@@ -19,6 +19,7 @@ dependencies = [
     "pyyaml>=6.0",
     "pydantic>=2.0",
     "tqdm>=4.65",
+    "jsonlines>=3.1",
 ]
 
 [project.optional-dependencies]
@@ -38,7 +39,7 @@ delta = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["litetemp_rag_finance", "litetemp_rag_finance.*"]
+include = ["litetemp_rag_finance*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

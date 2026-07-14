@@ -1,19 +1,21 @@
 from __future__ import annotations
 
-from datetime import date, datetime
-from typing import List, Optional
+from datetime import date
+from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from litetemp_rag_finance.hot_tier.faiss_index import FaissIndex
 from litetemp_rag_finance.schema import SearchResult
+
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
 
 
 class TimeFusionRetriever:
     def __init__(
         self,
-        embedder: SentenceTransformer,
+        embedder,
         faiss_index: FaissIndex,
         alpha: float = 0.7,
         decay_rate: float = 0.01,

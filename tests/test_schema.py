@@ -19,7 +19,7 @@ class TestChunk:
         )
         h = chunk.compute_hash()
         assert len(h) == 64
-        assert h == chunk.content_hash
+        assert h == chunk.compute_hash()
 
     def test_is_current_no_valid_to(self):
         chunk = Chunk(

@@ -1,20 +1,22 @@
 from __future__ import annotations
 
 from datetime import date
-from typing import List, Optional
+from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 
 from litetemp_rag_finance.cold_tier.parquet_store import ParquetStore
 from litetemp_rag_finance.schema import SearchResult
+
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
 
 
 class AsOfQuery:
     def __init__(
         self,
-        embedder: SentenceTransformer,
+        embedder,
         cold_store: ParquetStore,
     ):
         self.embedder = embedder

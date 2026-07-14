@@ -1,18 +1,20 @@
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from litetemp_rag_finance.hot_tier.faiss_index import FaissIndex
 from litetemp_rag_finance.schema import SearchResult
+
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
 
 
 class BaselineDPR:
     def __init__(
         self,
-        embedder: SentenceTransformer,
+        embedder,
         faiss_index: FaissIndex,
     ):
         self.embedder = embedder

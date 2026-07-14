@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import Dict, Optional
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from litetemp_rag_finance.content_hash import (
     find_changed_chunks,
@@ -30,6 +29,7 @@ class UpdatePipeline:
         dimension: int = 384,
         device: str = "cpu",
     ):
+        from sentence_transformers import SentenceTransformer
         logger.info(f"Loading embedder: {embedder_model} on {device}")
         self.embedder = SentenceTransformer(embedder_model, device=device)
         self.chunker = TextChunker(chunk_size=chunk_size, chunk_overlap=chunk_overlap)

@@ -88,7 +88,7 @@ class TemporalMetrics:
     ) -> dict:
         import re
         citations = re.findall(
-            r"\[([^:]+):([^\]]+)\]\s*\(valid\s+(\d{4}-\d{2}-\d{2})\s*–\s*(\d{4}-\d{2}-\d{2}|present)\)",
+            r"\[([^:]+):([^\]]+)\][^(]*\(valid\s+(\d{4}-\d{2}-\d{2})\s*[-\u2013]\s*(\d{4}-\d{2}-\d{2}|present)\)",
             generated_answer,
         )
         return {

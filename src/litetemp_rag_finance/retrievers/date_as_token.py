@@ -1,19 +1,21 @@
 from __future__ import annotations
 
 from datetime import date
-from typing import List, Optional
+from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from litetemp_rag_finance.hot_tier.faiss_index import FaissIndex
 from litetemp_rag_finance.schema import Chunk, SearchResult
+
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
 
 
 class DateAsToken:
     def __init__(
         self,
-        embedder: SentenceTransformer,
+        embedder,
         faiss_index: FaissIndex,
     ):
         self.embedder = embedder
